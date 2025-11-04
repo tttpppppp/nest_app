@@ -1,1 +1,2 @@
-nx run many -t lint
+nx run-many -t lint
+
