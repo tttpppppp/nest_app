@@ -12,15 +12,14 @@ export class LoggerMiddleware implements NestMiddleware {
     (req as any)[MetaDataKeys.PROCESS_ID] = processId;
     (req as any)[MetaDataKeys.START_TIME] = startTime;
     Logger.log(
-      `[${processId}] ${method} ${originalUrl} - Body: ${JSON.stringify(
-        body
+      `Start process [${processId}] ${method} ${originalUrl} -
       )} - Time: ${new Date(now).toISOString()}`
     );
     const originalSend = res.send.bind(res);
     res.send = function (body?: any): Response {
       const responseTime = Date.now() - startTime;
       Logger.log(
-        `[${processId}] ${method} ${originalUrl} - Response Time: ${responseTime}ms`
+        `End process [${processId}] ${method} ${originalUrl} - Response Time: ${responseTime}ms`
       );
       return originalSend(body);
     };

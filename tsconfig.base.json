@@ -8,6 +8,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "strictPropertyInitialization": false,
     "target": "es2015",
     "module": "esnext",
     "lib": ["es2020", "dom"],
@@ -21,7 +22,8 @@
       "@common/middleware/*": ["libs/middleware/src/lib/*"],
       "@common/utils/*": ["libs/utils/src/lib/*"],
       "@common/interface/*": ["libs/interface/src/lib/*"],
-      "@common/interceptors/*": ["libs/interceptors/src/lib/*"]
+      "@common/interceptors/*": ["libs/interceptors/src/lib/*"],
+      "@common/decorators/*": ["libs/decorators/src/lib/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -27,6 +27,8 @@ export class ExceptionInterceptor implements NestInterceptor {
         return data;
       }),
       catchError((err) => {
+        console.log(err);
+
         const duration = Date.now() - startTime;
         const message =
           err.response?.message || err?.message || 'Internal Server Error';
